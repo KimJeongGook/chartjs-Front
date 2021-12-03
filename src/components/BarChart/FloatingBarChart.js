@@ -1,50 +1,40 @@
 import { Chart } from "chart.js";
 import { useEffect, useRef } from "react";
 
-function StackdBarChartwithGroups(props) {
+function FloatingBarChart(props) {
     const {data, labels} = props;
     
     const canvasDom = useRef(null)
     useEffect( () =>{
         const ctx = canvasDom.current.getContext('2d');
-        const stackdBarChart = new Chart(ctx, {
+        const floatingBarChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,
                 datasets: [
                     {
-                        data: data,
+                        data: data.map(() => {
+                            return [100, -100]
+                        }),
                         backgroundColor: 'rgba(255,0,0,0.3)',
-                        stack: 'Group 0'
                     },
                     {
-                        data: data,
+                        data: data.map(() => {
+                            return [100, -100]
+                        }),
                         backgroundColor: 'rgba(0,255,0,0.3)',
-                        stack: 'Group 1'
                     },
                     {
-                        data: data,
+                        data: data.map(() => {
+                            return [100, -100]
+                        }),
                         backgroundColor: 'rgba(0,0,255,0.3)',
-                        stack: 'Group 1'
                     }
                 ]
             },
-            options : {
-                scales : {
-                    x: {
-                        stacked: true,
-                    },
-                    y: {
-                        stacked: true,
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                }
-            }
         });
         return() =>{
-            stackdBarChart.destroy();
+            floatingBarChart.destroy();
         }
     }, []);
     return(
@@ -53,4 +43,4 @@ function StackdBarChartwithGroups(props) {
         </div>
     )
 }
-export default StackdBarChartwithGroups;
+export default FloatingBarChart;
