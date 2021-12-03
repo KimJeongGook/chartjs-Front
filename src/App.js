@@ -7,6 +7,7 @@ import VerticalBarChart from './components/VerticalBarChart';
 import HorizontalBarChart from './components/HorizontalBarChart';
 import LineChart from './components/LineChart';
 import Layout from './components/Layout';
+import StackdBarChartwithGroups from './components/StackdBarChartWithGroups';
 import StackdBarChart from './components/StackedBarChart';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <HorizontalBarChart data={data} labels={labels}/>
       <LineChart data={data} labels={labels}/>
       <StackdBarChart data={data} labels={labels}/>
+      <StackdBarChartwithGroups data={data} labels={labels}/>
     </Layout>
   );
 } 
