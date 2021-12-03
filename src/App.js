@@ -10,7 +10,7 @@ import StackdBarChart from './components/BarChart/StackedBarChart';
 import FloatingBarChart from './components/BarChart/FloatingBarChart';
 import BarChartBoarderRadius from './components/BarChart/BarChartBoarderRadius';
 
-import LineChart from './components/LineChart';
+import LineChart from './components/LineChart/LineChart';
 import Layout from './components/Layout';
 
 function App() {
