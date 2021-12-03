@@ -3,17 +3,18 @@
 // Chart.register(...registerables);
 // import Chart from 'chart.js/auto';
 
-import VerticalBarChart from './VerticalBarChart';
-import HorizontalBarChart from './HorizontalBarChart';
-import LineChart from './LineChart';
+import VerticalBarChart from './components/VerticalBarChart';
+import HorizontalBarChart from './components/HorizontalBarChart';
+import LineChart from './components/LineChart';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <div>
+    <Layout>
       <VerticalBarChart />
       <HorizontalBarChart />
       <LineChart />
-    </div>
+    </Layout>
   );
 } 
 
