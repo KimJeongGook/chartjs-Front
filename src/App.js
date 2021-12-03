@@ -12,6 +12,8 @@ import BarChartBoarderRadius from './components/BarChart/BarChartBoarderRadius';
 
 import LineChart from './components/LineChart/LineChart';
 import Layout from './components/Layout';
+import MultiAxisLineChart from './components/LineChart/MultiAxisLineChart';
+import SteppedLineChart from './components/LineChart/SteppedLineChart';
 
 function App() {
   const data = [50,40,30,35,40];
@@ -25,6 +27,8 @@ function App() {
       <StackdBarChartwithGroups data={data} labels={labels}/>
       <FloatingBarChart data={data} labels={labels}/>
       <BarChartBoarderRadius data={data} labels={labels}/>
+      <MultiAxisLineChart data={data} labels={labels}/>
+      <SteppedLineChart data={data} labels={labels}/>
     </Layout>
   );
 } 
