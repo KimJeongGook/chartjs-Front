@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import Chart from 'chart.js/auto';
 
-function BarChartBoarderRadius (props) {
+function BarChartBoarderRadius(props) {
   console.log();
-  const {data, labels} = props
+  const { data, labels } = props;
+
   const canvasDom = useRef(null);
-  useEffect( () => {
+  useEffect(() => {
     const ctx = canvasDom.current.getContext('2d');
-    const barChartBoarderRadius  = new Chart(ctx, {
+    const barChartBoarderRadius = new Chart(ctx, {
       type: "bar",
       data: {
         labels: labels,
@@ -29,26 +30,26 @@ function BarChartBoarderRadius (props) {
           },
         ],
       },
-    //   options: {
-    //       plugins: {
-    //           legend: {
-    //               position: "bottom",
-    //           },
-    //       },
-    //   },
+      //   options: {
+      //       plugins: {
+      //           legend: {
+      //               position: "bottom",
+      //           },
+      //       },
+      //   },
     });
     return () => {
-        barChartBoarderRadius.destroy();
+      barChartBoarderRadius.destroy();
     }
   }, []);
-//   const style = {
-//       backgroundColor: "rgba(255,0,0,0.3)"
-//  }
+  //   const style = {
+  //       backgroundColor: "rgba(255,0,0,0.3)"
+  //  }
   return (
     <div>
       <canvas ref={canvasDom} />
     </div>
   );
-} 
+}
 
-export default BarChartBoarderRadius ;
+export default BarChartBoarderRadius;
